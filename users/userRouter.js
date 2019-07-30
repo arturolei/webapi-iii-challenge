@@ -18,7 +18,7 @@ router.post('/', validateUser, async (req, res) => {
 router.post('/:id/posts', validateUserId,validatePost, async (req, res) => {
     try{
         const newPost = await posts.insert(req.body);
-        res.status(201).json(comment);
+        res.status(201).json(newPost);
     } catch (error) {
         res.status(500).json(error);
     }
